@@ -1,7 +1,12 @@
 const { Thought, User, Reaction } = require('../models');
 
 const ThoughtController = {
-  // add thought
+  
+  //getAllThoughts
+
+  //getThoughtById
+  
+    // add thought
   addThought({ params, body }, res) {
     console.log(body);
     Thought.create(body)
@@ -86,4 +91,4 @@ const ThoughtController = {
   }
 };
 
-module.exports = thoughtController;
+module.exports = ThoughtController;

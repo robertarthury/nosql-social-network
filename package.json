@@ -5,7 +5,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "jest",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seeds.js",
+    "heroku-postbuild": "npm run seed"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +18,8 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.13"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/robertarthury/pizza-hunt.git"
-  },
-  "bugs": {
-    "url": "https://github.com/robertarthury/pizza-hunt/issues"
-  },
-  "homepage": "https://github.com/robertarthury/pizza-hunt#readme"
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
+    "jest": "^25.3.0"
+  }
 }

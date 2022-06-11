@@ -31,15 +31,18 @@ const UserSchema = new Schema(
 
     }
 );
-user.path('email').validate(function (email) {
-    var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    return emailRegex.test(email.text); // Assuming email has a text attribute
- });
+
+const User = model('User', UserSchema);
+
+//User.path('email').validate(function (email) {
+  //  var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    //return emailRegex.test(email.text); // Assuming email has a text attribute
+ //});
 
  UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
 
-const User = model('User', UserSchema);
+
 
 module.exports = User;
